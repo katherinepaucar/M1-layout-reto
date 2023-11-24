@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source":"src/index.html",
+  "source": "src/index.html",
   "scripts": {
-   "start": "parcel"
+    "start": "parcel"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.3",
     "cssnano": "^4.1.10",
     "sass": "^1.26.5"
   },
