@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "source":"src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "start": "parcel"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "sass": "^1.26.5"
+  },
+  "dependencies": {
+    "parcel": "^2.10.3"
   }
 }
