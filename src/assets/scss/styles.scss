@@ -66,6 +66,7 @@ header{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
         grid-template-rows:  auto;
+        grid-gap: 4px;
         img{
             width: 100%
         }
@@ -84,7 +85,6 @@ main{
         }
         .top{
             @include gridDinamic(225px);
-            gap: 5px;
             direction: rtl;
 
             }
