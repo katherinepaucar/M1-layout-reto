@@ -79,8 +79,12 @@ main{
         display: flex;
         flex-direction: column;
         align-content: center;
+        .screen-small{
+            display: none;
+        }
          .section-title{
             margin-bottom: 4px;
+
 
         }
         .top{
@@ -107,8 +111,23 @@ footer{
     grid-area: pie;
 }
 @media screen and (max-width: 1280px) {
+    .header-logo{
+        .platform-title{
+            display: none;
+        }
+    }
 
     main {
+            #top-text {
+                .sreen-large{
+                    display: none;
+                }
+                .screen-small{
+                    display: inline
+                }
+
+            }
+
             .top{
                 @include gridDinamic(3,225px);
                 div:nth-child(-n+2){
@@ -123,6 +142,29 @@ footer{
             .second{
 
                 @include gridDinamic(3, 250px);
+
+            }
+}
+
+
+}
+@media screen and (max-width: 480px) {
+
+    main {
+            .top{
+                @include gridDinamic(1,225px);
+                div:nth-child(-n+2){
+                        display: none;
+                }
+            }
+            .first{
+
+                @include gridDinamic(1, 250px);
+
+            }
+            .second{
+
+                @include gridDinamic(1, 250px);
 
             }
 }
