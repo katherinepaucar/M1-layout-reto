@@ -26,7 +26,7 @@ header{
     color: c.$color-text-primary;
     position: sticky;
     top: 0;
-    background-color: c.$background-color;;
+    background-color: c.$background-color;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
@@ -72,6 +72,10 @@ header{
         }
 
 }
+@mixin zoomItem($num){
+    transform: scale($num);
+
+}
 main{   
         grid-area: principal;
         color:c.$color-text-primary;
@@ -113,15 +117,26 @@ main{
                     grid-row: 1;
     
                 }
+
+                .top-item:hover{
+                   @include zoomItem(1.2);
+                }
             }
 
         .first{
 
             @include gridDinamic(auto-fit, 250px);
+            .item:hover{
+                @include zoomItem(1.2);
+             }
 
         }
         .second{
             @include gridDinamic(auto-fit, 250px);
+            .item:hover{
+                @include zoomItem(1.2);
+             }
+
         }
 
 
@@ -170,9 +185,6 @@ footer{
                     grid-row: 1;
     
                 }
-                /*div:nth-child(-n+2){
-                        display: none;
-                }*/
             }
             .first{
 
