@@ -152,10 +152,7 @@ footer{
 
     main {
             .top{
-                @include gridDinamic(1,225px);
-                div:nth-child(-n+2){
-                        display: none;
-                }
+                @include gridDinamic(1, 225px);
             }
             .first{
 
