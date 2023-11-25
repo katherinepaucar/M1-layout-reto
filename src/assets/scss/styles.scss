@@ -1,11 +1,13 @@
+@use './colors.scss' as c;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@100;200&family=Space+Mono&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color:#141414;
+    background-color: c.$background-color;
     font-family: 'Montserrat', sans-serif;
     display: grid;
     width: 100vw;
@@ -19,8 +21,11 @@ body{
 }
 header{
     grid-area: cabecera;
+    background-color: c.$background-color;;
     display: grid;
-    color:white;
+    color: c.$color-text-primary;
+    position: sticky;
+    top: 0;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     "logo buttons";
@@ -40,6 +45,7 @@ header{
     }
 
 
+
 }
 @mixin gridDinamic($width){
         display: grid;
@@ -49,7 +55,7 @@ header{
 }
 main{   
         grid-area: principal;
-        color:white;
+        color:c.$color-text-primary;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -60,9 +66,12 @@ main{
         }
         .top{
             @include gridDinamic(225px);
-            grid-column-start: revert;
-            gap: 5px
-        }
+            gap: 5px;
+            direction: rtl;
+
+
+            }
+            
         .first{
 
             @include gridDinamic(250px);
