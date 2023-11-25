@@ -45,6 +45,19 @@ header{
         justify-content: end;
         gap: 20px
     }
+    .header-buttons > div{
+        width: 70px;
+        padding: 6px; 
+        text-align: center;
+
+    }
+
+    .header-buttons > div:hover{
+        background-color: c.$bg-button;
+        color:c.$color-text-btn;
+        border-radius: 3px;
+
+    }
 
 
 
