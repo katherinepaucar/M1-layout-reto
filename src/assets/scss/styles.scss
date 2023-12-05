@@ -126,6 +126,11 @@ main {
 }
 footer {
   grid-area: pie;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: c.$color-text-primary;
+  padding: 5px;
 }
 /************MEDIA QUERIES***************/
 @media screen and (max-width: 1280px) {
