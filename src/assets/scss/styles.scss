@@ -84,6 +84,7 @@ main {
     content: "5";
   }
   .top {
+    margin-top: 4px;
     @include gridDinamic(auto-fit, 225px);
     div:nth-child(1) {
       grid-column: 5/5;
@@ -107,20 +108,23 @@ main {
     }
 
     .top-item:hover {
-      @include zoomItem(1.1);
+      @include zoomItem(1.2);
     }
   }
 
   .first {
+    margin-top: 4px;
+    margin-bottom: 20px;
     @include gridDinamic(auto-fit, 250px);
     .item:hover {
-      @include zoomItem(1.1);
+      @include zoomItem(1.2);
     }
   }
   .second {
+    margin-top: 4px;
     @include gridDinamic(auto-fit, 250px);
     .item:hover {
-      @include zoomItem(1.1);
+      @include zoomItem(1.2);
     }
   }
 }
