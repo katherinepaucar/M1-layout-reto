@@ -19,11 +19,13 @@ body {
     "pie";
 }
 header {
+  width: 95%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   grid-area: cabecera;
+  place-self: center;
   color: c.$color-text-primary;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   background-color: c.$background-color;
@@ -68,7 +70,7 @@ header {
   transform: scale($num);
 }
 main {
-  width: 96%;
+  width: 95%;
   grid-area: principal;
   place-self: center;
   color: c.$color-text-primary;
@@ -77,6 +79,7 @@ main {
 
   .section-title {
     margin-bottom: 4px;
+    margin-top: 15px;
   }
   #top-text::after {
     content: "5";
