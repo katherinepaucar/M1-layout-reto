@@ -83,12 +83,13 @@ main{
         display: flex;
         flex-direction: column;
         align-content: center;
-        .screen-small{
-            display: none;
-        }
          .section-title{
             margin-bottom: 4px;
 
+
+        }
+        #top-text::after {
+            content: '5';
 
         }
         .top{
@@ -155,13 +156,8 @@ footer{
     }
 
     main {
-            #top-text {
-                .sreen-large{
-                    display: none;
-                }
-                .screen-small{
-                    display: inline
-                }
+            #top-text::after {
+                content: '3';
 
             }
 
