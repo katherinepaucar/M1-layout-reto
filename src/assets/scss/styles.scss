@@ -9,7 +9,6 @@
 }
 body {
   background-color: c.$background-color;
-  width: 100%;
   display: grid;
   box-sizing: border-box;
   grid-template-columns: 1fr;
@@ -21,9 +20,9 @@ body {
 }
 header {
   grid-area: cabecera;
-  padding: 20px;
-  padding-right: 20px;
   color: c.$color-text-primary;
+  padding-left: 20px;
+  padding-right: 20px;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -69,14 +68,13 @@ header {
   transform: scale($num);
 }
 main {
+  width: 96%;
   grid-area: principal;
+  place-self: center;
   color: c.$color-text-primary;
-  padding: 20px;
-  padding-right: 20px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+
   .section-title {
     margin-bottom: 4px;
   }
