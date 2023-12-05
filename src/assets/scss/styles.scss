@@ -1,233 +1,190 @@
-@use './colors.scss' as c;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@100;200&family=Space+Mono&display=swap');
+@use "./colors.scss" as c;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@100;200&family=Space+Mono&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-body{
-    background-color: c.$background-color;
-    width:100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: grid;
-    box-sizing: border-box;
-    grid-template-columns: 1fr;
-    grid-template-rows: 150px auto auto;
-    grid-template-areas: 
+body {
+  background-color: c.$background-color;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px auto auto;
+  grid-template-areas:
     "cabecera"
     "principal"
     "pie";
 }
-header{
-    grid-area: cabecera;
-    color: c.$color-text-primary;
-    position: sticky;
-    top: 0;
-    background-color: c.$background-color;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-    "logo buttons";
-    .header-logo{
-        grid-area: logo;
-        display: flex;
-        align-items: center;
-        gap: 12px;
+header {
+  grid-area: cabecera;
+  color: c.$color-text-primary;
+  position: sticky;
+  top: 0;
+  background-color: c.$background-color;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "logo buttons";
+  .header-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+  .header-buttons > div {
+    width: 70px;
+    padding: 6px;
+    text-align: center;
+  }
 
-    }
-    .header-buttons{
-        grid-area: buttons;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        gap: 20px
-    }
-    .header-buttons > div{
-        width: 70px;
-        padding: 6px; 
-        text-align: center;
-
-    }
-
-    .header-buttons > div:hover{
-        background-color: c.$bg-button;
-        color:c.$color-text-btn;
-        border-radius: 3px;
-
-    }
-
-
-
+  .header-buttons > div:hover {
+    background-color: c.$bg-button;
+    color: c.$color-text-btn;
+    border-radius: 3px;
+  }
 }
-@mixin gridDinamic($var,$width){
-        display: grid;
-        grid-template-columns: repeat($var, minmax($width, 1fr));
-        grid-template-rows:  auto;
-        grid-gap: 4px;
-        img{
-            width: 100%
-        }
-
+@mixin gridDinamic($var, $width) {
+  display: grid;
+  grid-template-columns: repeat($var, minmax($width, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 4px;
+  img {
+    width: 100%;
+  }
 }
-@mixin zoomItem($num){
-    transform: scale($num);
-
+@mixin zoomItem($num) {
+  transform: scale($num);
 }
-main{   
-        grid-area: principal;
-        color:c.$color-text-primary;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-         .section-title{
-            margin-bottom: 4px;
+main {
+  grid-area: principal;
+  color: c.$color-text-primary;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  .section-title {
+    margin-bottom: 4px;
+  }
+  #top-text::after {
+    content: "5";
+  }
+  .top {
+    @include gridDinamic(auto-fit, 225px);
+    div:nth-child(1) {
+      grid-column: 5/5;
+      grid-row: 1;
+    }
+    div:nth-child(2) {
+      grid-column: 4/4;
+      grid-row: 1;
+    }
+    div:nth-child(3) {
+      grid-column: 3/3;
+      grid-row: 1;
+    }
+    div:nth-child(4) {
+      grid-column: 2 / 2;
+      grid-row: 1;
+    }
+    div:nth-child(5) {
+      grid-column: 1 / 1;
+      grid-row: 1;
+    }
 
+    .top-item:hover {
+      @include zoomItem(1.1);
+    }
+  }
 
-        }
-        #top-text::after {
-            content: '5';
-
-        }
-        .top{
-            @include gridDinamic(auto-fit,225px);
-                div:nth-child(1){
-                    grid-column: 5/5;
-                    grid-row: 1;
-                }
-                div:nth-child(2){
-                    grid-column: 4/4;
-                    grid-row: 1;
-    
-                }
-                div:nth-child(3){
-                    grid-column: 3/3;
-                    grid-row: 1;
-    
-                }
-                div:nth-child(4){
-                    grid-column: 2 / 2;
-                    grid-row: 1;
-    
-                }
-                div:nth-child(5){
-                    grid-column: 1 / 1;
-                    grid-row: 1;
-    
-                }
-
-                .top-item:hover{
-                   @include zoomItem(1.1);
-                }
-            }
-
-        .first{
-
-            @include gridDinamic(auto-fit, 250px);
-            .item:hover{
-                @include zoomItem(1.1);
-             }
-
-        }
-        .second{
-            @include gridDinamic(auto-fit, 250px);
-            .item:hover{
-                 @include zoomItem(1.1);
-             }
-
-        }
-
-
-    
-        
-
+  .first {
+    @include gridDinamic(auto-fit, 250px);
+    .item:hover {
+      @include zoomItem(1.1);
+    }
+  }
+  .second {
+    @include gridDinamic(auto-fit, 250px);
+    .item:hover {
+      @include zoomItem(1.1);
+    }
+  }
 }
-footer{
-    grid-area: pie;
+footer {
+  grid-area: pie;
 }
 @media screen and (max-width: 1280px) {
-    .header-logo{
-        .platform-title{
-            display: none;
-        }
+  .header-logo {
+    .platform-title {
+      display: none;
+    }
+  }
+
+  main {
+    #top-text::after {
+      content: "3";
     }
 
-    main {
-            #top-text::after {
-                content: '3';
-
-            }
-
-            .top{
-                @include gridDinamic(3,225px);
-                div:nth-child(1),  div:nth-child(2){
-                    display: none;
-                }
-                div:nth-child(3){
-                    grid-column: 3/3;
-                    grid-row: 1;
-    
-                }
-                div:nth-child(4){
-                    grid-column: 2 / 2;
-                    grid-row: 1;
-    
-                }
-                div:nth-child(5){
-                    grid-column: 1 / 1;
-                    grid-row: 1;
-    
-                }
-            }
-            .first{
-
-                @include gridDinamic(3, 250px);
-
-            }
-            .second{
-
-                @include gridDinamic(3, 250px);
-
-            }
-}
-
-
+    .top {
+      @include gridDinamic(3, 225px);
+      div:nth-child(1),
+      div:nth-child(2) {
+        display: none;
+      }
+      div:nth-child(3) {
+        grid-column: 3/3;
+        grid-row: 1;
+      }
+      div:nth-child(4) {
+        grid-column: 2 / 2;
+        grid-row: 1;
+      }
+      div:nth-child(5) {
+        grid-column: 1 / 1;
+        grid-row: 1;
+      }
+    }
+    .first {
+      @include gridDinamic(3, 250px);
+    }
+    .second {
+      @include gridDinamic(3, 250px);
+    }
+  }
 }
 @media screen and (max-width: 480px) {
-
-    main {
-            .top{
-                @include gridDinamic(1, 225px);
-                div:nth-child(3){
-                    grid-column: 1;
-                    grid-row: 3;
-    
-                }
-                div:nth-child(4){
-                    grid-column: 1;
-                    grid-row: 2;
-    
-                }
-                div:nth-child(5){
-                    grid-column: 1;
-                    grid-row: 1;
-    
-                }
-            }
-            .first{
-
-                @include gridDinamic(1, 250px);
-
-            }
-            .second{
-
-                @include gridDinamic(1, 250px);
-
-            }
-}
-
-
+  main {
+    .top {
+      @include gridDinamic(1, 225px);
+      div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 2;
+      }
+      div:nth-child(5) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+    .first {
+      @include gridDinamic(1, 250px);
+    }
+    .second {
+      @include gridDinamic(1, 250px);
+    }
+  }
 }
