@@ -19,11 +19,11 @@ body {
     "pie";
 }
 header {
-  width: 95%;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding:  10px;
   grid-area: cabecera;
-  place-self: center;
   color: c.$color-text-primary;
   position: fixed;
   top: 0;
@@ -109,7 +109,7 @@ main {
     }
 
     .top-item:hover {
-      @include zoomItem(1.2);
+      @include zoomItem(1.1);
     }
   }
 
@@ -118,14 +118,14 @@ main {
     margin-bottom: 20px;
     @include gridDinamic(auto-fit, 250px);
     .item:hover {
-      @include zoomItem(1.2);
+      @include zoomItem(1.1);
     }
   }
   .second {
     margin-top: 4px;
     @include gridDinamic(auto-fit, 250px);
     .item:hover {
-      @include zoomItem(1.2);
+      @include zoomItem(1.1);
     }
   }
 }
@@ -146,6 +146,7 @@ footer {
   }
 
   main {
+
     #top-text::after {
       content: "3";
     }
